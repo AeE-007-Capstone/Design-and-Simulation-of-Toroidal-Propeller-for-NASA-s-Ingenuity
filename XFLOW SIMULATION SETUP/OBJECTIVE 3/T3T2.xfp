@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<XFlow build="1.0.116.00">
+ <Project>
+  <Name>T3T2</Name>
+ </Project>
+ <Engine>
+  <Kernel>3d</Kernel>
+  <FlowModel type="SinglePhase">
+   <Execution>GPU</Execution>
+  </FlowModel>
+  <AnalysisType>External</AnalysisType>
+  <ThermalModel type="Isothermal"/>
+  <TurbulenceSettings>
+   <TurbulenceModel type="WallAdaptingLocalEddy">
+    <Cw doe="0">0.6</Cw>
+   </TurbulenceModel>
+   <TurbulenceGeneration type="Off"/>
+  </TurbulenceSettings>
+  <ScalarTransport type="Off"/>
+  <AdvancedOptions>
+   <HighOrderBoundaryConditions>Off</HighOrderBoundaryConditions>
+   <ForceEvaluationScheme>MomentumExchange</ForceEvaluationScheme>
+  </AdvancedOptions>
+ </Engine>
+ <Environment>
+  <GlobalAttributes>
+   <DomainType>VirtualWindTunnel</DomainType>
+   <ExtAccelerationLaws>
+    <X>0</X>
+    <Y>0</Y>
+    <Z>0</Z>
+   </ExtAccelerationLaws>
+   <InitialConditions type="WindTunnelDefault"/>
+   <ReferenceArea type="Top"/>
+   <ReferenceVelocity type="Custom">
+    <ReferenceVelocityValue doe="0">10</ReferenceVelocityValue>
+   </ReferenceVelocity>
+  </GlobalAttributes>
+  <WindTunnel>
+   <Position doe="0">( 0 , 0 , 0 )</Position>
+   <Dimensions doe="0">( 6.4 , 8.8 , 6.4 )</Dimensions>
+   <GroundWall type="Off"/>
+   <LateralBoundaries>Periodic</LateralBoundaries>
+   <BoundaryConditions type="Velocity">
+    <VelocityLaws>
+     <X>0</X>
+     <Y>-10</Y>
+     <Z>0</Z>
+    </VelocityLaws>
+   </BoundaryConditions>
+   <H5File/>
+  </WindTunnel>
+ </Environment>
+ <Materials>
+  <Materials>
+   <Material1>
+    <Name>Material 1</Name>
+    <Type>Gas</Type>
+    <MolecularWeight doe="0">43.34</MolecularWeight>
+    <ReferenceDensityGas doe="0">0.02</ReferenceDensityGas>
+    <OperatingTemperature doe="0">210</OperatingTemperature>
+    <ViscosityModel type="Newtonian">
+     <DynamicViscosity doe="0">1.13e-05</DynamicViscosity>
+    </ViscosityModel>
+    <HTCEstimation type="Automatic">
+     <HTCThermalConductivity doe="0">0.0105</HTCThermalConductivity>
+     <HTCSpecificHeatCapacity doe="0">730</HTCSpecificHeatCapacity>
+    </HTCEstimation>
+    <AdiabaticIndex doe="0">1.4</AdiabaticIndex>
+   </Material1>
+  </Materials>
+ </Materials>
+ <Geometry>
+  <Entities>
+   <Shape id="0" name="Ingenuity">
+    <VisibilityOnViews>1</VisibilityOnViews>
+    <File>Ingenuity.nfb</File>
+    <MaterialDoubleSided>Off</MaterialDoubleSided>
+    <Material type="Rubber">
+     <Colour>( 255 , 0 , 0 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+    <MaterialInside type="">
+     <Colour>( 0 , 0 , 255 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </MaterialInside>
+    <Behaviour type="Fixed">
+     <Scale doe="0">1</Scale>
+     <Position doe="0">( 0 , 0 , 0 )</Position>
+     <Orientation doe="0">( 0 , 0 , 0 )</Orientation>
+    </Behaviour>
+    <EnableBoundaryConditions>On</EnableBoundaryConditions>
+    <CosimulationRegionName/>
+    <CosimulationReferenceMarkerMode>Off</CosimulationReferenceMarkerMode>
+    <CosimulationReferenceMarkerPosition doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerPosition>
+    <CosimulationReferenceMarkerRotation doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerRotation>
+    <BoundaryConditions type="Wall">
+     <WallModel>Resolved</WallModel>
+     <VirtualMovingWall type="Off"/>
+    </BoundaryConditions>
+    <ImportData3DX>
+     <ItemName3DX/>
+     <InstanceHandle3DX/>
+     <ImportShapeName/>
+     <ImportEdgeQuality>0</ImportEdgeQuality>
+     <ImportFaceQuality>0</ImportFaceQuality>
+    </ImportData3DX>
+    <Surfaces/>
+    <Children/>
+   </Shape>
+   <Shape id="3" name="Ingenuity Blade - Twisted - Toroidal - 17">
+    <VisibilityOnViews>1</VisibilityOnViews>
+    <File>Ingenuity Blade - Twisted - Toroidal - 17.nfb</File>
+    <MaterialDoubleSided>Off</MaterialDoubleSided>
+    <Material type="Rubber">
+     <Colour>( 255 , 255 , 255 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+    <MaterialInside type="">
+     <Colour>( 0 , 0 , 255 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </MaterialInside>
+    <COG doe="0">( 3.85849e-16 , 0.000511464 , 1.14843e-16 )</COG>
+    <Behaviour type="Enforced">
+     <Scale doe="0">1</Scale>
+     <PositionLaws>
+      <X>0</X>
+      <Y>0.32</Y>
+      <Z>0</Z>
+     </PositionLaws>
+     <AnglesMode type="EulerAngles">
+      <AngularLaws>
+       <X>0</X>
+       <Y>15600*t</Y>
+       <Z>0</Z>
+      </AngularLaws>
+     </AnglesMode>
+    </Behaviour>
+    <EnableBoundaryConditions>On</EnableBoundaryConditions>
+    <CosimulationRegionName/>
+    <CosimulationReferenceMarkerMode>Off</CosimulationReferenceMarkerMode>
+    <CosimulationReferenceMarkerPosition doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerPosition>
+    <CosimulationReferenceMarkerRotation doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerRotation>
+    <BoundaryConditions type="Wall">
+     <WallModel>Resolved</WallModel>
+     <ImmersedBoundaryMethod>On</ImmersedBoundaryMethod>
+    </BoundaryConditions>
+    <ImportData3DX>
+     <ItemName3DX/>
+     <InstanceHandle3DX/>
+     <ImportShapeName/>
+     <ImportEdgeQuality>0</ImportEdgeQuality>
+     <ImportFaceQuality>0</ImportFaceQuality>
+    </ImportData3DX>
+    <Surfaces/>
+    <Children/>
+   </Shape>
+   <Shape id="4" name="Ingenuity Blade - Twisted - Toroidal - 17-000001">
+    <VisibilityOnViews>1</VisibilityOnViews>
+    <File>Ingenuity Blade - Twisted - Toroidal - 17-000001.nfb</File>
+    <MaterialDoubleSided>Off</MaterialDoubleSided>
+    <Material type="Rubber">
+     <Colour>( 61 , 201 , 178 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </Material>
+    <MaterialInside type="">
+     <Colour>( 0 , 0 , 255 )</Colour>
+     <TransparencyIndex>1</TransparencyIndex>
+     <ReflectionIndex>0.5</ReflectionIndex>
+     <MetallicityCoefficient>0</MetallicityCoefficient>
+     <Clearcoat>Off</Clearcoat>
+     <EmissivityCoefficient>0</EmissivityCoefficient>
+    </MaterialInside>
+    <COG doe="0">( 1.24426e-08 , 0.000493557 , -2.21443e-08 )</COG>
+    <Behaviour type="Enforced">
+     <Scale doe="0">1</Scale>
+     <PositionLaws>
+      <X>0</X>
+      <Y>0.42</Y>
+      <Z>0</Z>
+     </PositionLaws>
+     <AnglesMode type="EulerAngles">
+      <AngularLaws>
+       <X>0</X>
+       <Y>-15600*t</Y>
+       <Z>0</Z>
+      </AngularLaws>
+     </AnglesMode>
+    </Behaviour>
+    <EnableBoundaryConditions>On</EnableBoundaryConditions>
+    <CosimulationRegionName/>
+    <CosimulationReferenceMarkerMode>Off</CosimulationReferenceMarkerMode>
+    <CosimulationReferenceMarkerPosition doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerPosition>
+    <CosimulationReferenceMarkerRotation doe="0">( 0 , 0 , 0 )</CosimulationReferenceMarkerRotation>
+    <BoundaryConditions type="Wall">
+     <WallModel>Automatic</WallModel>
+     <WallRoughness doe="0">0</WallRoughness>
+     <ImmersedBoundaryMethod>On</ImmersedBoundaryMethod>
+    </BoundaryConditions>
+    <ImportData3DX>
+     <ItemName3DX/>
+     <InstanceHandle3DX/>
+     <ImportShapeName/>
+     <ImportEdgeQuality>0</ImportEdgeQuality>
+     <ImportFaceQuality>0</ImportFaceQuality>
+    </ImportData3DX>
+    <Surfaces/>
+    <Children/>
+   </Shape>
+  </Entities>
+  <ArbitraryReferenceFrame>
+   <ReferenceGeometry>Global</ReferenceGeometry>
+  </ArbitraryReferenceFrame>
+  <MeshDeflection doe="0">0.1</MeshDeflection>
+  <Cables/>
+  <Joints/>
+ </Geometry>
+ <Simulation>
+  <Time>
+   <SimulationTime doe="0">1</SimulationTime>
+   <TimeStepMode type="FixedAutomatic">
+    <Courant doe="0">1</Courant>
+   </TimeStepMode>
+  </Time>
+  <LatticeDiscretization>
+   <ResolvedScale doe="0">0.05</ResolvedScale>
+   <RefinementAlgorithm>AdaptiveRefinement</RefinementAlgorithm>
+   <Options>
+    <SealSmallGaps>Automatic</SealSmallGaps>
+    <DiscardNarrowIsolatedFluidRegions>Off</DiscardNarrowIsolatedFluidRegions>
+    <RefinementTransitionLength>8</RefinementTransitionLength>
+   </Options>
+   <ShapesOptions>
+    <Shape type="Ingenuity">
+     <TargetResolvedScale doe="0">0.0125</TargetResolvedScale>
+     <SealSmallGaps>Off</SealSmallGaps>
+     <Surfaces/>
+     <Children/>
+    </Shape>
+    <Shape type="Ingenuity Blade - Twisted - Toroidal - 17">
+     <TargetResolvedScale doe="0">0.1</TargetResolvedScale>
+     <SealSmallGaps>Off</SealSmallGaps>
+     <Surfaces/>
+     <Children/>
+    </Shape>
+    <Shape type="Ingenuity Blade - Twisted - Toroidal - 17-000001">
+     <TargetResolvedScale doe="0">0.1</TargetResolvedScale>
+     <SealSmallGaps>Off</SealSmallGaps>
+     <Surfaces/>
+     <Children/>
+    </Shape>
+   </ShapesOptions>
+   <AdaptiveRefinement>
+    <WakeResolution doe="0">0.0125</WakeResolution>
+    <WakeDistanceControl type="Off"/>
+    <WakeRefinementThreshold type="Automatic"/>
+   </AdaptiveRefinement>
+   <Regions/>
+  </LatticeDiscretization>
+  <StoreData>
+   <FramesFrequency doe="0">250</FramesFrequency>
+   <SaveFramesFrom doe="0">0</SaveFramesFrom>
+   <NumericalDataFrequency type="SolverTimeStep">
+    <ArbitraryLatticeLevel>0.05</ArbitraryLatticeLevel>
+   </NumericalDataFrequency>
+   <SaveAveragedFields type="Off"/>
+   <ComputeMarkers>Off</ComputeMarkers>
+   <OutputFormat>
+    <NativeXFlow>On</NativeXFlow>
+    <CGNS>Off</CGNS>
+    <VTK>Off</VTK>
+   </OutputFormat>
+   <FieldsToSave>
+    <Vorticity>On</Vorticity>
+    <StaticPressure>On</StaticPressure>
+    <TotalPressure>On</TotalPressure>
+    <TurbulenceIntensity>On</TurbulenceIntensity>
+    <EffectiveViscosity>On</EffectiveViscosity>
+    <QCriterion>On</QCriterion>
+   </FieldsToSave>
+   <StaticPressureFilters/>
+   <Probes/>
+   <SolverSurfaceIntegrals/>
+   <SolverVolumeIntegrals/>
+   <CuttingPlanes/>
+  </StoreData>
+  <MpiOptions mpiIsBeenUsed="1" isRemoteCommand="0">
+   <WorkingDirectory></WorkingDirectory>
+   <User>Ces</User>
+   <Machines/>
+   <QueueSystem>NONE</QueueSystem>
+   <NumJobs>2</NumJobs>
+   <ThreadsPerJobs>1</ThreadsPerJobs>
+   <MpiImplementation>OpenMPI4</MpiImplementation>
+   <EngineInstallDir>C:/Program Files/SIMULIA/XFlow_2022</EngineInstallDir>
+   <HeadNodeChecked>0</HeadNodeChecked>
+   <HeadNode></HeadNode>
+   <IsDistributed>1</IsDistributed>
+   <IsRemotePreprocessing>1</IsRemotePreprocessing>
+   <RetrieveSimData></RetrieveSimData>
+   <SMBAccess>0</SMBAccess>
+   <RemoteOS>Unix</RemoteOS>
+   <QueueCommand></QueueCommand>
+   <QueueScript></QueueScript>
+  </MpiOptions>
+ </Simulation>
+ <Post-Processing>
+  <General>
+   <Data>Instantaneous</Data>
+   <InterpolationMode>Off</InterpolationMode>
+   <Show>
+    <DomainStructure>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <MinLevel>0</MinLevel>
+     <MaxLevel>20</MaxLevel>
+     <CellSize>Off</CellSize>
+    </DomainStructure>
+    <VolumetricField>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <VisualisationField>Velocity</VisualisationField>
+     <TransferenceLaw>a*a</TransferenceLaw>
+    </VolumetricField>
+    <SurfaceInfo type="3dField">
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <Field>Velocity</Field>
+    </SurfaceInfo>
+    <Isocontours>
+     <VisibilityOnViews>0</VisibilityOnViews>
+     <Number>5</Number>
+    </Isocontours>
+   </Show>
+  </General>
+  <CuttingPlanes/>
+  <Isosurfaces/>
+  <StreamTracers/>
+  <PlotLines/>
+  <Sensors/>
+  <SurfaceIntegrals/>
+  <VolumeIntegrals/>
+  <CustomFields/>
+  <Entities/>
+  <Cameras/>
+  <ClippingPlanes/>
+  <Views>
+   <GraphicView1>
+    <CameraSettings>
+     <LinkToCamera>GraphicView1</LinkToCamera>
+     <Location>
+      <From>( 0.00352771 , 0.334218 , -537.041 )</From>
+      <To>( 0.00352771 , 0.334218 , 0 )</To>
+      <Up>( 0 , 1 , 0 )</Up>
+     </Location>
+     <ManualClippingPlanes type="Off"/>
+     <Perspective type="Off"/>
+    </CameraSettings>
+   </GraphicView1>
+  </Views>
+ </Post-Processing>
+ <Animation>
+  <AnimationOptions animationMode="0"/>
+  <AnimationProperties duration="0.006" firstFrame="0" framesFrequency="250" timeLaw="0.001200 + t_animation" lastFrame="0"/>
+  <AnimatedItems>
+   <GeneralItems/>
+   <GeometryItems/>
+   <CuttingPlanesItems/>
+   <IsosurfacesItems/>
+   <StreamTracersItems/>
+  </AnimatedItems>
+  <ImageProperties input="-1" holdAspectRatio="1" width="2048" height="2724"/>
+  <Save outputFormat="0" imageBaseName="" quality="2" folder="" frameRate="25" checkdefaultfolder="0" outputPNG="0"/>
+ </Animation>
+ <AnalysisSettings>
+  <StaticPressure minValue="-1" maxValue="1" isAutomatic="1"/>
+  <Velocity minValue="0" maxValue="1" isAutomatic="1"/>
+  <Vorticity minValue="0" maxValue="1" isAutomatic="1"/>
+  <Vx minValue="-1" maxValue="1" isAutomatic="1"/>
+  <Vy minValue="-1" maxValue="1" isAutomatic="1"/>
+  <Vz minValue="-1" maxValue="1" isAutomatic="1"/>
+  <TotalPressure minValue="-1" maxValue="1" isAutomatic="1"/>
+  <TurbulenceIntensity minValue="0" maxValue="1" isAutomatic="1"/>
+  <Temperature minValue="277" maxValue="330" isAutomatic="1"/>
+  <Viscosity minValue="0" maxValue="1" isAutomatic="1"/>
+  <VOF minValue="0" maxValue="1" isAutomatic="1"/>
+  <SurfaceInfo minValue="0" maxValue="1" isAutomatic="1"/>
+  <CustomFields/>
+  <PassiveScalars/>
+ </AnalysisSettings>
+ <UserDefinedVariables/>
+ <FMU_IO/>
+ <ViewAngles>
+  <GraphicView1 OrthoViewAxisY="0" OrthoViewAxisMinusX="0" OrthoViewAxisMinusY="0" OrthoViewAxisZ="0" OrthoViewAxisMinusZ="0" OrthoViewAxisX="0"/>
+ </ViewAngles>
+ <DoeConfiguration>
+  <DoeInputs/>
+  <DoeOutputs/>
+  <DoeProjectMetadata CommandLineVariables="0" Export="0"/>
+ </DoeConfiguration>
+</XFlow>
